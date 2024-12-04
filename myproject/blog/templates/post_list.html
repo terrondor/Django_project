@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Список постов</h2>
+<a href="{% url 'post_create' %}">Создать новый пост</a>
+<ul>
+    {% for post in posts %}
+        <li>
+            <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+            <a href="{% url 'post_edit' post.id %}">Редактировать</a>
+            <a href="{% url 'post_delete' post.id %}">Удалить</a>
+        </li>
+    {% empty %}
+        <li>Посты отсутствуют.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'logout' %}">Выйти</a>
+{% endblock %}

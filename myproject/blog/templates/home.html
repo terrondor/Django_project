@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Добро пожаловать в наш блог!</h1>
+<p>Здесь вы можете читать и создавать посты.</p>
+<a href="{% url 'post_list' %}">Перейти к постам</a>
+<a href="{% url 'register' %}">Зарегистрироваться</a>
+<a href="{% url 'login' %}">Войти</a>
+{% endblock %}
